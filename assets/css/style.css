@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&family=Merriweather:wght@300;400;700&display=swap');
+
+.redressed{
+
+    font-family: 'Redressed', cursive;
+}
+
+.merriweather{
+
+    font-family: 'Merriweather', serif;
+}
+
+.btn-order{
+
+    color:var(--bs-teal);
+    border-color: var(--bs-teal);
+    transition: 0.5s;
+}
+
+.btn-order:hover,
+.btn-order:active{
+
+    color: #ffff;
+    background-color:var(--bs-teal) ;
+}
+
+style-menu{
+
+    color:var(--bs-teal);
+    border-color: (--bs-teal);
+    transition: 0.5s;
+}
+.style-menu  {
+
+    border-bottom: 1px solid transparent;
+    transition: padding-bottom 0.4s ease-in-out, border-color 0.3s ease;
+}
+
+.style-menu:hover {
+
+    padding-bottom: 20px;
+    border-bottom-color: var(--bs-teal);
+}
+
+.cc-navbar{
+    color:var(-- bs-teal);
+    border-color: var(--bs-teal);
+    transition: 0.5s;
+}
+.cc-navbar {
+
+    background-color: rgba(0, 0, 0, 0.55);
+    font-family: 'Merriweather', serif;
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.54);
+    z-index: 99;
+}
+
+.cc-navbar .nav-link {
+
+    border-bottom: 1px solid transparent;
+    transition: padding-bottom 0.4s ease-in-out, border-color 0.3s ease;
+}
+
+.cc-navbar .nav-link:hover {
+
+    padding-bottom: 20px;
+    border-bottom-color: var(--bs-teal);
+}
+
+.banner {
+
+    background: linear-gradient(rgba(0,0,0,.5) ,rgba(0,0,0,.5)), url('../img/femme-fleurs.jpg') center center fixed no-repeat;
+    background-size: cover;
+    height :800px;
+}
+.ban {
+
+    background: linear-gradient(rgba(0,0,0,.5) ,rgba(0,0,0,.5)), url('../img/yeux.jpg') center center fixed no-repeat;
+    background-size:cover;
+    height :800px;
+}
+.ban .ban-desc{
+
+    font-size: 48px;
+    font-weight: 300;
+    color: #ffff;
+}
+
+.banner .banner-desc{
+
+    font-size: 48px;
+    font-weight: 300;
+    color: #ffff;
+}
+
+.cc-menu {
+
+    background: linear-gradient(rgba(0,0,0,.5) ,rgba(0,0,0,.5)), url('../img/cosmetic-oil-3164684_960_720.jpg') center center fixed no-repeat;
+    background-size: cover;
+    height :1200px;
+}
+
+nav ul li {
+
+    list-style-type: none;
+}
+
+.vv-container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+  }
+
+  .jj-card{
+border-color: white;
+width: 300px;
+height: 200px;
+  }
+
+  .tt-titre{
+
+    font-size: 25px;
+    font-weight: 300;
+    color:dimgray
+  }
+  .link-deco{
+
+    text-decoration: wavy;
+    color: lightslategray;
+    
+  }
+
+   .jay{
+
+    background: url('../img/cosmetics-1543276_960_720.jpg') center center fixed no-repeat;
+    background-size:cover ;
+    height :400px;
+   }
+
+   .modcar{
+    max-height: 600px;
+    width: 100%;
+   }
