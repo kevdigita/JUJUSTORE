@@ -1,0 +1,16 @@
+.container {
+    max-width: 960px;
+    
+  }
+
+  body{
+
+    background: linear-gradient(rgba(0,0,0,.5) ,rgba(0,0,0,.5)), url('../img/toner-906142_960_720.jpg') center center fixed no-repeat;
+    background-size: cover;
+    height :800px;
+  }
+  
+  .deco{
+
+    background-color: black;
+  }

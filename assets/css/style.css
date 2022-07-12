@@ -123,6 +123,20 @@ height: 200px;
     font-weight: 300;
     color:dimgray
   }
+
+
+  .cc-text{
+
+    font-size: 50px;
+    font-weight: 300;
+    color:whitesmoke
+  }
+  .cc-titre{
+
+    font-size: 30px;
+    font-weight: 300;
+    color:whitesmoke
+  }
   .link-deco{
 
     text-decoration: wavy;
@@ -140,4 +154,28 @@ height: 200px;
    .modcar{
     max-height: 600px;
     width: 100%;
+   }
+   .det{
+
+    background: linear-gradient(rgba(0,0,0,.5) ,rgba(0,0,0,.5)),url('../img/woman-1853507_1920.jpg') center center fixed no-repeat;
+    background-size:cover ;
+    height :1200px;
+    
+   }
+   .cc-card{
+
+border-color: black;
+width: 400px;
+height: 800px;
+   }
+   .cou{
+    font-size: 25px;
+    font-weight: 300;
+    color:blanchedalmond
+   }
+
+   .stt{
+    font-size: 25px;
+    font-weight: 300;
+    color: lightcoral
    }
