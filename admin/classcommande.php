@@ -57,9 +57,9 @@ public function commander($qte,$art)
 {
 
     commande::setquantiter($qte);
-    commande::setusername($_SESSION['jujupseudo']);
+    commande::setusername($_SESSION['jujuid']);
     commande::setarticle($art);
-  global $connec;
+  require "connect.php";
   $sql="SELECT*  FROM produit WHERE id =\"$this->article\" ";
     
   $p=$connec->prepare($sql);
@@ -69,7 +69,7 @@ public function commander($qte,$art)
   $req=$connec->prepare("UPDATE produit SET stock=\"$qte\" WHERE id =\"$this->article\"");
   $req->execute();
 
-  $q=$connec->prepare( "INSERT INTO commande (quantiter,username,article)
+  $q=$connec->prepare( "INSERT INTO commande (quantite,username,article)
   VALUES(?,?,?)");
   
 $q->execute([$this->quantiter,$this->username,$this->article]);

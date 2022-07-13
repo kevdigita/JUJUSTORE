@@ -95,7 +95,7 @@ else
               </ul>
             </li>
 <?php
-  if(isset($_SESSION['jujupseudo']))
+  if(isset($_SESSION['jujupseudo'])&& $_SESSION['jujupseudo']=="VENDEUR")
   {
      
 

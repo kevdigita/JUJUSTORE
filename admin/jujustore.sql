@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mar. 01 fév. 2022 à 21:36
--- Version du serveur :  10.4.18-MariaDB
--- Version de PHP : 7.4.16
+-- Hôte : localhost
+-- Généré le : mer. 13 juil. 2022 à 12:57
+-- Version du serveur : 10.4.22-MariaDB
+-- Version de PHP : 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,26 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `commande` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `username` int(11) NOT NULL,
   `article` int(11) NOT NULL,
-  `quantiter` int(11) NOT NULL,
+  `quantite` int(11) NOT NULL,
   `statut` varchar(20) NOT NULL DEFAULT 'non regler',
   `time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `commande`
---
-
-INSERT INTO `commande` (`id`, `username`, `article`, `quantiter`, `statut`, `time`) VALUES
-(1, 'KEVINOS', 1, 6, 'non regler', '2021-11-29 11:47:35'),
-(2, 'KEVINOS', 1, 6, 'non regler', '2021-11-29 11:50:38'),
-(3, 'KEVINOS', 1, 5, 'non regler', '2021-11-29 11:51:52'),
-(4, 'KEVINOS', 1, 5, 'non regler', '2021-11-29 11:53:33'),
-(5, 'KEVINOS', 1, 5, 'non regler', '2021-11-29 11:54:39'),
-(6, 'KEVINOS', 2, 7, 'non regler', '2021-11-29 13:38:25'),
-(7, 'KEVINOS', 2, 5, 'non regler', '2021-11-29 13:42:22'),
-(8, 'KEVINOS', 3, 3, 'non regler', '2021-11-29 22:59:31');
 
 -- --------------------------------------------------------
 
@@ -75,9 +61,8 @@ CREATE TABLE `produit` (
 --
 
 INSERT INTO `produit` (`id`, `photo`, `nom`, `composant`, `categorie`, `specification`, `description`, `quantiter`, `stock`, `prix`, `time`) VALUES
-(1, 'fenjal.jpg', 'fenjal', '', 'Lait Corps', '', 'CHOCO', '', 0, 1500, '2021-11-29 09:24:45'),
-(2, 'Fa-petit.jpg', 'FA', '', 'Deodorant', 'KIL', 'sans tache ni viole', '10ML', 0, 5000, '2021-11-29 13:36:44'),
-(3, 'lavera.jpg', 'LAVERA', '', 'Parfum', '', 'parfum pour homme concu a base de feuille de cacao pure', '10ML', 52, 5000, '2021-11-29 13:44:50');
+(2, 'Fa-petit.jpg', 'FA', '', 'Deodorant', 'KIL', 'sans tache ni viole', '10ML', 43, 5000, '2021-11-29 13:36:44'),
+(3, 'lavera.jpg', 'LAVERA', '', 'Parfum', '', 'parfum pour homme concu a base de feuille de cacao pure', '10ML', 46, 5000, '2021-11-29 13:44:50');
 
 -- --------------------------------------------------------
 
@@ -86,6 +71,7 @@ INSERT INTO `produit` (`id`, `photo`, `nom`, `composant`, `categorie`, `specific
 --
 
 CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `email` varchar(255) NOT NULL,
   `tel` varchar(20) NOT NULL,
@@ -95,14 +81,6 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`username`, `email`, `tel`, `nom`, `prenom`, `adresse`, `password`, `time`) VALUES
-('DOMINATRIX', 'OTENIA@gmail.com', '66434456', 'otenia', 'juliana', NULL, 'eed8cdc400dfd4ec85dff70a170066b7', '2021-11-28 21:23:06'),
-('KEVINOS', 'dalmeidakevin@gmail.com', '90553557', 'almeida', 'kevin', NULL, 'f59b7efafd800e27b47a488d30615c73', '2021-11-28 19:52:49');
 
 --
 -- Index pour les tables déchargées
@@ -126,7 +104,7 @@ ALTER TABLE `produit`
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -136,13 +114,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `commande`
 --
 ALTER TABLE `commande`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Contraintes pour les tables déchargées
@@ -152,8 +136,8 @@ ALTER TABLE `produit`
 -- Contraintes pour la table `commande`
 --
 ALTER TABLE `commande`
-  ADD CONSTRAINT `commande_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`),
-  ADD CONSTRAINT `commande_ibfk_2` FOREIGN KEY (`article`) REFERENCES `produit` (`id`);
+  ADD CONSTRAINT `commande_ibfk_2` FOREIGN KEY (`article`) REFERENCES `produit` (`id`),
+  ADD CONSTRAINT `commande_ibfk_3` FOREIGN KEY (`username`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

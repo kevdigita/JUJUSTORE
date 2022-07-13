@@ -5,7 +5,7 @@ include_once "admin/connect.php";
 <!doctype html>
 <html lang="fr">
   <head>
-      
+
 
     <!-- Required meta tags -->
     <meta charset="utf-8">

@@ -97,31 +97,8 @@ public function inscription ($username,$num,$nom,$prenom,$pass,$email,$adresse=f
 
  user::setemail($email);
 
- global $connec; 
-
+ require 'connect.php';
 $err=true;
-$sql="SELECT * FROM users WHERE username=\"$this->username\"";
-$p=$connec->prepare($sql);
-$p->execute();
-$user=$p->fetch(PDO::FETCH_ASSOC);
-
-if(!empty($user["username"]))
-
-    {?>  
-    
-    <div class="alert alert-dark text-danger">
-     <button
-     type="button"  data-dismiss="alert"
-     aria-hidden="true">
-    &times;
-    </button>
-  
-      <h5>CE NOM D'UTILISATEUR EXISTE DEJA  </h5>
-      </div>
-     <?php
-     $err=false;
-    
-    }
     $sql="SELECT * FROM users WHERE email=\"$this->email\"";
 $p=$connec->prepare($sql);
 $p->execute();
@@ -143,7 +120,7 @@ if(!empty($user["email"]))
     
     }
  
-   if($err=true) {
+   if($err==true) {
 
      
 
@@ -230,7 +207,7 @@ user::setnum($user['tel']);
 user::setadresse($user['adresse']);
 user::setemail($user['email']);
 
-
+$_SESSION["jujuid"]=$user['id'];
 $_SESSION["jujupseudo"]=$this->username;
     $_SESSION["jujunom"]=$this->nom;
     $_SESSION["jujuprenom"]=$this->prenom;
@@ -266,8 +243,8 @@ else {
 }
 public function verif($email)
 {
-
-    global $connec; 
+require 'connect.php';
+  
 
     user::setemail($email);
 

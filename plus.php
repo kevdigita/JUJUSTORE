@@ -26,7 +26,7 @@ if(!empty($qte))
   ?>
   <script>
 
-<?php $redirection="index.php?p=mescon"?>
+<?php $redirection="index.php?p=pan"?>
             url="<?php echo $redirection;?>"
       
       setTimeout("window.location=url",0)
