@@ -66,13 +66,14 @@ public function commander($qte,$art)
   $p->execute(); 
   $pro=$p->fetch(PDO::FETCH_ASSOC);
      $qte=$pro['stock']-$this->quantiter;
+     
   $req=$connec->prepare("UPDATE produit SET stock=\"$qte\" WHERE id =\"$this->article\"");
   $req->execute();
 
   $q=$connec->prepare( "INSERT INTO commande (quantite,username,article)
   VALUES(?,?,?)");
   
-$q->execute([$this->quantiter,$this->username,$this->article]);
+$q->execute(array($this->quantiter,$this->username,$this->article));
 
 
 
