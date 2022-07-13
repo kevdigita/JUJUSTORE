@@ -220,11 +220,11 @@ if(!isset($code))
               <label for="username" class="form-label">type de compte</label>
               <div class="input-group has-validation">
                 
-              <label for="username" class="form-label">acheteur</label>
+              <label for="username" class="form-label">CLIENT</label>
                 <input type="radio" class=" "  username="acheteur"  name="pseudo" placeholder="Nom d'utilisateur" required>
 
                 
-              <label for="username" class="form-label">vendeur</label>
+              <label for="username" class="form-label">BOUTIQUE</label>
                 <input type="radio"  class="" username="vendeur" name="pseudo" placeholder="Nom d'utilisateur" required>
                 
               </div>

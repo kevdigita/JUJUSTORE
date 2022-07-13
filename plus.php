@@ -175,7 +175,7 @@ else
             {?>
               <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                 <form action="" method="post"><div class="mx-5 ">
-                <input type="submit" name='submit' class="btn btn-outline-success btn-lg px-4" value="Commander">
+                <input type="submit" name='submit' class="btn btn-outline-success btn-lg px-4" value="ajouter au panier">
                 <input type="number" min=1 max=<?php echo $pro->getstock() ?>  required name="qte" id="" placeholder="Quantité" class="bg-dark bg-opacity-25 border-dark"></div>
               </form>
             </div>

@@ -95,11 +95,14 @@ else
               </ul>
             </li>
 <?php
+  if(isset($_SESSION['jujupseudo']))
+  {
+     
 
      ?>       <li class="nav-item pe-4">
               <a class="nav-link" href="index.php?p=aj">AJOUTER UN PRODUIT</a>
             </li><?php
-
+}
 
 
 ?>

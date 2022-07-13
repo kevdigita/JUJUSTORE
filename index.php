@@ -20,7 +20,7 @@ include_once "admin/connect.php";
         <link rel="stylesheet" href="assets/css/style.css" />
 
   
-    <title>Juju Store</title>
+    <title>LONGRICH AL KAUSAR</title>
   </head>
   <body>
     <?php
@@ -71,6 +71,15 @@ else if($_GET["p"]=="aj")
   
 
    include_once 'ajoupro.php';
+  
+   
+
+}
+else if($_GET["p"]=="pan")
+{
+  
+
+   include_once 'panier.php';
   
    
 
